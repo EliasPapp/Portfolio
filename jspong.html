@@ -1,0 +1,284 @@
+<!DOCTYPE HTML>
+
+<html lang="pt-br">
+  
+  <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/jspong.css">
+    
+    <!-- Javascript Game
+    <script src="/jspong.js" defer></script>
+     -->
+
+    <!-- Bootstrap - CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- Header and Footer using JQuery
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+      $(function(){
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+      });
+    </script>
+    -->
+    
+    <!-- Show only when on mobile devices -->
+    <style type="text/css"> 
+      
+      .mobileShow {display: none;} 
+
+      /* Smartphone Portrait and Landscape */ 
+      @media only screen
+      and (min-device-width : 320px)
+      and (max-device-width : 480px){
+        
+        .mobileShow {display: inline;}
+        
+      }
+      
+    </style>
+    
+    <title>JavaScript Pong (2016)</title>
+    
+  </head>
+  <body>
+    
+    <!-- Bootstrap - JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    
+    
+    <!-- Content -->
+    <div class="row">
+      
+      <!-- HTML Buttons -->
+      <div class="col">
+
+        <b class="btn btn-primary" id="btnW" role="button" onclick="btnW()">W</b>
+        <br><br>
+        <b class="btn btn-primary" id="btnS" role="button" onclick="btnS()">S</b>
+
+      </div>
+
+      <!-- Canvas: game window -->
+      <div class="col">
+
+        <canvas id="game" width="800" height="600"></canvas>
+        <!--<script type="text/javascript" src="pong.js"></script>-->
+
+      </div>
+      
+      <div class="col">
+
+        <b class="btn btn-danger" id="btnUp" role="button" onclick="btnUp()">⬆</b>
+        <br><br>
+        <b class="btn btn-danger" id="btnDown" role="button" onclick="btnDown()">⬇</b>
+          
+      </div>
+      
+    </div>
+    
+    <!-- Game and buttons script -->
+    <script>
+    
+      var canvas = document.getElementById("game");
+      var contexto = canvas.getContext("2d");
+      console.log(canvas);
+
+      function resize() {
+        
+        var height = window.innerHeight;
+        var ratio = canvas.width/canvas.height;
+        var width = height * ratio;
+        
+	      canvas.style.height = height + 'px';
+        
+      }
+      
+      window.addEventListener('load', resize, true);
+      window.addEventListener('resize', resize, false);
+        
+      /*
+      let resizeCanvas = function () {
+        
+        wWidth = window.innerWidth;
+        wHeight = window.innerHeight;
+        canvas.width = wWidth;
+        canvas.height = wHeight;
+        
+      }
+      
+      window.addEventListener("resize", function(){
+        
+        resizeCanvas();
+        
+      });
+      */
+      
+      var x1=780, y1=300;
+      var x2=0, y2=300;
+      var w1=20, h1=150;
+      var w2=20, h2=150;
+
+      var ballx=400, bally=300;
+      var bw=20, bh=20;
+      var bvelx = 12;
+      var bvely = 12;
+      var vel = 15;
+      var setacima = false;
+      var setabaixo = false;
+      var teclaW = false;
+      var teclaS = false;
+
+      var pt1 = 0;
+      var pt2 = 0;
+      
+      
+      //Player one controls (screen buttons)
+      btnUp.ontouchstart = function() {
+        setacima = true;
+      }
+      
+      btnDown.ontouchstart = function() {
+        setabaixo = true;
+      }
+      
+      btnUp.ontouchend = function() {
+        setacima = false;
+      }
+      
+      btnDown.ontouchend = function() {
+        setabaixo = false;
+      }
+      
+      //Player two controls (screen buttons)
+      btnW.ontouchstart = function() {
+        teclaW = true;
+      }
+      
+      btnS.ontouchstart = function() {
+        teclaS = true;
+      }
+      
+      btnW.ontouchend = function() {
+        teclaW = false;
+      }
+      
+      btnS.ontouchend = function() {
+        teclaS = false;
+      }
+      
+      document.addEventListener ("keydown", function(e){
+      console.log(e.keyCode);
+      if(e.keyCode == '38') {
+        setacima = true;
+      }
+      
+      if(e.keyCode == '40'){
+      setabaixo = true;
+      }
+      if(e.keyCode == '87'){
+      teclaW = true;
+      }
+      if(e.keyCode == '83'){
+      teclaS = true;
+      }
+      })
+
+      document.addEventListener ("keyup", function(e){
+      console.log(e.keyCode);
+      if(e.keyCode == '38'){
+      setacima = false;
+      }
+      if(e.keyCode == '40'){
+      setabaixo = false;
+      }
+      if(e.keyCode == '87'){
+      teclaW = false;
+      }
+      if(e.keyCode == '83'){
+      teclaS = false;
+      }
+      })
+
+      function loop(){
+        contexto.clearRect(0, 0, canvas.width, canvas.height);
+        contexto.fillStyle = "#000000";
+        contexto.fillRect(0, 0, canvas.width, canvas.height);
+        contexto.fillStyle = "#FF0000";
+        contexto.fillRect(x1, y1, w1, h1);
+        contexto.fillStyle = "#0000FF";
+        contexto.fillRect(x2, y2, w2, h2);
+        if (setacima == true && y1 > 0){
+        y1 -= vel;
+        }
+        if (setabaixo == true && y1+h1 < canvas.height){
+        y1 += vel;
+        }
+        if (teclaW == true && y2 > 0){
+        y2 -= vel;
+        }
+        if (teclaS == true && y2+h2 < canvas.height){
+        y2 += vel;
+        }
+        contexto.fillStyle = "#EEEEEE";
+        contexto.font = "100px Impact";
+        contexto.fillText (pt1, 200, 100);
+        contexto.fillText (pt2, 600, 100);
+        contexto.font = "45px Impact";
+        contexto.fillText ("Pontos", 365, 45);
+        contexto.fillRect(ballx, bally, bw, bh);
+        ballx += bvelx;
+        bally += bvely;
+        if (bally+bh > canvas.height){
+        bvely = - bvely;
+        }
+        if (bally < 0){
+        bvely = - bvely;
+        }
+        if (ballx+bw > canvas.width+bw){
+        ballx = 400;
+        bally = 300;
+        pt1 ++;
+        bvelx = + bvelx;
+        bvelx = -8;
+        bvely = Math.floor (Math.random() *16) - 8;
+        }
+        if (ballx < -30){
+        ballx = 400;
+        bally = 300;
+        pt2 ++;
+        bvelx = + bvelx;
+        bvelx = 8;
+        bvely = Math.floor (Math.random() *16) - 8;
+        }
+        if (bally > y1-bh && bally < y1+h1 && ballx+bw >= x1){
+        bvelx = - bvelx;
+        bvelx -= 0.5;
+        //Multiplica o valor gerado aleatóriamente por 16, resultando em um número de 0 a 16, depois subtraindo-o por 8, podendo assim ser um número de -8 a 8.
+        //Encontrado em: http://stackoverflow.com/questions/8611830/javascript-random-positive-or-negative-number
+        bvely = Math.floor (Math.random() *16) - 8;
+        }
+        if (bally > y2-bh && bally < y2+h2 && ballx <= x2 + w2){
+        bvelx = - bvelx;
+        bvelx += 0.5;
+        //Multiplica o valor gerado aleatóriamente por 16, resultando em um número de 0 a 16, depois subtraindo-o por 8, podendo assim ser um número de -8 a 8.
+        //Encontrado em: http://stackoverflow.com/questions/8611830/javascript-random-positive-or-negative-number
+        bvely = Math.floor (Math.random() *16) - 8;
+        }
+      }
+      setInterval(loop, 1000/60);
+    
+    </script>
+        
+  </body>
+  
+</html>

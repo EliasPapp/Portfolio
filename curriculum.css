@@ -1,0 +1,44 @@
+top {
+  
+  padding: 1vw;
+  
+}
+
+/*
+.columns {
+  width: 10%;
+}
+*/
+
+
+.bgdark {
+  background-color: #EEEEEE;
+}
+
+.card-img {
+  height: 22vw;
+  object-fit: cover;
+}
+
+/*
+ul {
+  
+  padding: 10px 0px 0px 0px;
+  
+}
+*/
+
+info {
+  
+  list-style: none;
+  text-decoration: none;
+  font-size: 2.5vw;
+  
+}
+
+.info2 {
+  
+  padding: 2vw;
+  font-size: 2.3vw;
+  
+}
