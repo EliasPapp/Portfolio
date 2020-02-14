@@ -36,6 +36,12 @@ info {
   
 }
 
+infobuttons {
+  
+  float: left;
+  
+}
+
 .info2 {
   
   padding: 2vw;
