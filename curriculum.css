@@ -32,7 +32,7 @@ info {
   
   list-style: none;
   text-decoration: none;
-  font-size: 2.5vw;
+  font-size: 2.2vw;
   
 }
 
@@ -45,6 +45,14 @@ infobuttons {
 .info2 {
   
   padding: 2vw;
-  font-size: 2.3vw;
+  font-size: 2.0vw;
   
+}
+
+.textbutton {
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor:pointer;
 }

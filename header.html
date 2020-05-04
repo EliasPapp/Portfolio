@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- CSS
-    <link rel="stylesheet" href="/#.css">
+    <link rel="stylesheet" href="/curriculum.css">
     -->
     
     <!-- JavaScript
@@ -22,61 +22,92 @@
   </head>
   <body>
     
+    <!-- Content -->
+    <nav class="container-span" style="font-weight: bold;">
+    
+      <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+
+        <!--
+        <img src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FSuperGeeks20192%20cut2.png?v=1577927737105" width="30" height="30" class="d-inline-block align-top" alt="">
+        -->
+        <div class="col-9">
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav">
+
+              <li class="nav-item active">
+                <a class="nav-link" href="https://eliaspapp.glitch.me/">Início<span class="sr-only">(current)</span></a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownGames" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Jogos
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownGames">
+                  <a class="dropdown-item disabled" href="/blackout404.html">Blackout 404</a>
+                  <a class="dropdown-item disabled" href="/ffaracing.html">Free for All Racing</a>
+                  <a class="dropdown-item disabled" href="/deathmatchpong.html">Death Match Pong</a>
+                  <a class="dropdown-item" href="/jspong.html">JavaScript Pong</a>
+                </div>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link disabled" href="/animations.html">Animações</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link disabled" href="/arts.html">Artes</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/curriculum.html">Currículo</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="/contact.html">Contato</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link disabled" href="/about.html">Sobre</a>
+              </li>
+
+            </ul>
+
+          </div>
+        
+        </div>
+        
+        <div class="col-3 align-self-start" align="right">
+          
+          <a href="http://bit.ly/elias-papp-artwork" target="_blank">
+            <img src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FInstagram.png?v=1578342845669" style="height: 50px;"/>
+          </a>
+
+          <a href="https://www.youtube.com/channel/UCrewSZ0GtHM0GMVgJj-wZVw" target="_blank">
+            <img src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FYoutube.png?v=1578342862906" style="height: 50px;"/>
+          </a>
+
+          <a href="https://www.linkedin.com/in/elias-p-5466a0132/" target="_blank">
+            <img src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FLinkedIn.png?v=1578345410320" style="height: 50px;"/>
+          </a>
+
+        </div>
+        
+        <!-- class="fixed-bottom" or "fixed-top" for items to follow camera -->
+        
+      </nav>
+    
+    </nav>
+    
     <!-- Bootstrap - JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
-    <!-- Content -->
-    <nav class="container">
-    
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-
-          <a class="navbar-brand" href="/index.html">Super Mario World</a>
-        
-          <div class="collapse navbar-collapse" id="navbarSite">
-            
-            <ul class="nav navbar-nav ml-auto">
-              
-              <li>
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              
-              <li class="dropdown">
-                
-                <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" >SNES</a>
-                
-                <ul class="dropdown-menu">
-                  
-                  <li><a class="dropdown-item" href="smw.html">Super Mario World</a></li>
-                  <li><a class="dropdown-item" href="#">Super Mario Kart</a></li>
-                  <li><a class="dropdown-item" href="#">Super Bomberman 5</a></li>
-                  
-                </ul>
-                
-              </li>
-              
-              <li class="dropdown">
-                
-                <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">NES</a>
-                
-                <ul class="dropdown-menu">
-                  
-                  <li><a class="dropdown-item" href="smw.html">Super Mario Bros. 3</a></li>
-                  <li><a class="dropdown-item" href="#">Mega Man</a></li>
-                  <li><a class="dropdown-item" href="#">Metroid</a></li>
-                  
-                </ul>
-                
-              </li>
-              
-            </ul>
-            
-          </div>
-          
-        </nav>
-    
-    </nav>
     
   </body>
 </html>

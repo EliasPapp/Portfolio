@@ -9,11 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- CSS
-    <link rel="stylesheet" href="./#.css">
+    <link rel="stylesheet" href="/#.css">
     -->
     
     <!-- JavaScript
-    <script src="./#.js" defer></script>
+    <script src="/#.js" defer></script>
     -->
     
     <!-- Bootstrap - CSS -->
@@ -21,24 +21,68 @@
     
     <title>Página Inicial</title>
     
+    <!-- Include HTML files into this one (Header and Footer) -->
+    <script>
+      function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          /*search for elements with a certain atrribute:*/
+          file = elmnt.getAttribute("include-html");
+          if (file) {
+            /* Make an HTTP request using the attribute value as the file name: */
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("include-html");
+                includeHTML();
+              }
+            }
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            /* Exit the function: */
+            return;
+          }
+        }
+      }
+    </script>
+    
   </head>
   <body>
+    
+    <!-- Include Header -->
+    <div include-html="header.html"></div>
+    
+    <!-- Content -->
+    
+    <br>  
+    Este site está em período de testes, caso tenha interesse em ver algumas partes dele, clique nos botões abaixo:<br><br>
+    
+    <a class="btn btn-primary" href="/curriculum.html" role="button">Currículo</a>
+    <br>
+    <br>
+    <a class="btn btn-warning" href="/jspong.html" role="button">JS Pong 2016</a>
+    <br>
+    <br>
+    <a class="btn btn-secondary" href="/madnessguns.html" role="button">Guns</a>
+    
+    <!-- Include Footer -->
+    <div include-html="footer.html"></div>
+  
+    <!-- Calling the function to include HTML files -->
+    <script>
+      includeHTML();
+    </script>
        
     <!-- Bootstrap - JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     
-    <!-- Content -->    
-    Este site está em período de testes, caso tenha interesse em ver algumas partes dele, clique nos botões abaixo:<br><br>
-    
-    <a class="btn btn-primary" href="./curriculum.html" role="button">Currículo</a>
-    <br>
-    <br>
-    <a class="btn btn-warning" href="./jspong.html" role="button">JS Pong 2016</a>
-    <br>
-    <br>
-    <a class="btn btn-secondary" href="./madnessguns.html" role="button">Guns</a>
-        
   </body>
 </html>

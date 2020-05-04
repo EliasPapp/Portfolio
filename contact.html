@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+
+<html lang="pt-br">
+  
+  <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/curriculum.css">
+    
+    <!-- Javascript -->
+    <script src="/curriculum.js" defer></script>
+    
+    <!-- Bootstrap - CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            
+    <title>Elias Papp - Currículo</title>
+    
+    <!-- Include HTML files into this one (Header and Footer) -->
+    <script type="text/javascript">
+      
+      function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          /*search for elements with a certain atrribute:*/
+          file = elmnt.getAttribute("include-html");
+          if (file) {
+            /* Make an HTTP request using the attribute value as the file name: */
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("include-html");
+                includeHTML();
+              }
+            }
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            /* Exit the function: */
+            return;
+          }
+        }
+      }
+    </script>
+    
+  </head>
+  <body>
+    
+    <!-- Bootstrap - JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <!-- Include Header -->
+    <div include-html="header.html"></div>
+    
+    <br>
+    
+    <!-- Form -->
+    <div class="container">
+
+      <form action="https://formspree.io/mnqgaokr" method="POST">
+        
+        <div class="form-group">
+
+          <b>Obs.: Todos os campos são obrigatórios.</b>
+          
+          <br><br>
+          <label for="InputName">Nome completo</label>
+          <input class="form-control" type="text" name="name" id="InputName" aria-describedby="nameHelp" placeholder="Seu nome" required>
+          <br>
+          <label for="InputEmail">E-mail</label>
+          <input type="email" class="form-control" name="_replyto" id="InputEmail" aria-describedby="emailHelp" placeholder="Seu e-mail de contato" required>
+          <br>
+          <label for="InputSubject">Assunto</label>
+          <input class="form-control" type="text" name="message" id="InputSubject" aria-describedby="subjectHelp" placeholder="Qual o assunto?" required>
+          <br>
+          <label for="InputMessage">Mensagem</label>
+          <textarea class="form-control" type="text" name="message" id="InputMessage" rows="4" aria-describedby="messageHelp" placeholder="Escreva sua mensagem" required></textarea>
+
+          <br>
+          <button type="submit" class="btn btn-success" value="Send">Enviar</button>
+
+        </div>
+
+      </form>
+      
+    </div>
+
+    <!-- Include Footer -->
+    <div include-html="footer.html"></div>
+  
+    <!-- Calling the function to include HTML files -->
+    <script>
+      includeHTML();
+    </script>
+    
+  </body>
+  
+</html>
