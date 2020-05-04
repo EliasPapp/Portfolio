@@ -9,17 +9,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="/Portfolio/curriculum.css">
+    <link rel="stylesheet" href="/curriculum.css">
     
     <!-- Javascript -->
-    <script src="/Portfolio/curriculum.js" defer></script>
+    <script src="/curriculum.js" defer></script>
     
     <!-- Bootstrap - CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-    <!-- Header and Footer using JQuery -->
-        
+            
     <title>Elias Papp - Currículo</title>
+    
+    <!-- Include HTML files into this one (Header and Footer) -->
+    <script type="text/javascript">
+      
+      function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          /*search for elements with a certain atrribute:*/
+          file = elmnt.getAttribute("include-html");
+          if (file) {
+            /* Make an HTTP request using the attribute value as the file name: */
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("include-html");
+                includeHTML();
+              }
+            }
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            /* Exit the function: */
+            return;
+          }
+        }
+      }
+      /*
+      function switchImgs() {
+        var blackout404img = document.getElementById('blackout404img');
+            deathmatchpongimg = document.getElementById('deathmatchpongimg');
+            printbtn = document.getElementById('printbtn');
+                
+        blackout404img.src = "https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FBlackout%20404.png?v=1587997724443";
+        
+      }
+      
+      function refreshPage() {
+        location.reload();
+      }
+      */
+    </script>
     
   </head>
   <body>
@@ -29,6 +73,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     
+    <!-- Include Header -->
+    <div include-html="header.html"></div>
+    
     <!-- Content -->
     <div class="bgdark">
 
@@ -36,7 +83,7 @@
 
         <div class="col">
 
-          <img class="card-img border border-success" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FSuperGeeks20192%20cut2.png?v=1577927737105" alt="Imagem de perfil"/>
+          <img class="card-img" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FSuperGeeks20192%20cut2.png?v=1577927737105" alt="Imagem de perfil"/>
 
         </div>
 
@@ -52,12 +99,13 @@
         </info>
         
         <infobuttons class="col" align="right">
-          <button type="button" class="btn btn-success" style="font-size: 3vw" onclick="window.print();return false;">Imprimir</button>
-          
+          <button type="button" class="btn btn-success d-print-none" style="font-size: 3vw" onclick="/*switchImgs();*/ window.setTimeout(window.print, 10); //window.setTimeout(refreshPage, 10);">Imprimir</button>
+                    
+          <!--
           <div style="font-size: 2vw">
             
             <br><br><br><br>
-          
+            
             <a href="http://bit.ly/elias-papp-artwork" target="_blank">
               <img src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FInstagram.png?v=1578342845669" style="width: 25%;"/>
             </a>
@@ -70,42 +118,52 @@
               <img src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FLinkedIn.png?v=1578345410320" style="width: 25%;"/>
             </a>
           </div>
+          -->
 
         </infobuttons>
-        
-        <br>
-        
         
       </top>
 
     </div>
 
     <div class="info2">
-
-      <b>Sobre mim:</b><br>
-      Game designer, programador e artista 2D/3D. 
-
-      <br><br>
-
+      
+      <b>Sobre:</b>
+      <p>
+      Game developer, programador e artista 2D/3D.
+      </p>
+      
       <b>Experiência profissional:</b>
-      <li>Instrutor de Programação e Robótica - SuperGeeks Butantã (02/2019 – Atualmente)</li>
-      <li>Aprendiz em Criação de Websites e Edição de Imagens - Agência Pense Blue (Home Office, 05/2017 – 09/2017)</li>
-      <br>
+      <li><a class="text-dark dropdown-toggle" data-toggle="collapse" href="#SuperGeeks" role="button" aria-expanded="false">Instrutor de Programação e Robótica - SuperGeeks Butantã (02/2019 – Atualmente)</a></li>
+      <div class="collapse d-print-block" id="SuperGeeks">
+        <div style="font-size: 2vw;">
+          <p>Dou aulas de programação de jogos e sites, robótica e recreações para crianças e adolescentes a partir dos 6 anos. Além disso, colaboro com edições de vídeos, animações e artes, atendimento ao cliente e matrículas, auxiliando na administração.</p>
+        </div>
+      </div>
 
-      <b>Formação acadêmica:</b>
-      <li>Tecnólogo em Jogos Digitais - FATEC Carapicuíba (02/2017 – 12/2019)</li>
-      <li>Técnico em Programação de Jogos Digitais - ETEC Guaracy Silveira ext. Godofredo Furtado (07/2015 – 12/2016)</li>
-      <li>Percussionista - Liceu de Artes (01/2006 – 12/2011)</li>
-      <br>
+      <li><a class="text-dark dropdown-toggle" data-toggle="collapse" href="#PenseBlue" role="button" aria-expanded="false">Aprendiz em Desenvolvimento de Sites - Agência Pense Blue (05/2017 – 09/2017)</a></li>
+      <div class="collapse d-print-block" id="PenseBlue">
+        <div style="font-size: 2vw;">
+          <p>Trabalhei home office com foco em desenvolvimento de sites a partir de wireframes usando a ferramenta Wordpress, atuando também em criação de artes para e-Books.</p>
+        </div>
+      </div>
       
-      <b>Idiomas:</b>
-      <li>Português brasileiro: nativo</li>
-      <li>Inglês: avançado</li>
-      <br>
-
-      <b>Conhecimentos;</b>
+      <p>
+        <b>Formação acadêmica:</b>
+        <li>Tecnólogo em Jogos Digitais - FATEC Carapicuíba (02/2017 – 12/2019)</li>
+        <li>Técnico em Programação de Jogos Digitais - ETEC Guaracy Silveira ext. Godofredo Furtado (07/2015 – 12/2016)</li>
+        <li>Percussionista - Liceu de Artes (01/2006 – 12/2011)</li>
+      </p>
+    
+      <p>
+        <b>Idiomas:</b>
+        <li>Português brasileiro: nativo</li>
+        <li>Inglês: avançado</li>
+      </p>
       
-      <div style="float: right;">
+      <b>Conhecimentos:</b>
+      
+      <div class="d-print-none" style="float: right;">
         <label style="font-size: 1.5vw">Ordernar por:</label>
         <select id="order" name="order" class="form-control" style="font-size: 1.5vw">
           <!--option disabled selected value>Ordenar por:</option> -->
@@ -113,132 +171,158 @@
           <option id="area">Área de atuação</option>
         </select>
       </div>
-      <br><br>
       
-      <script>
-        
-        var xp = '<div class="row"><div class="col-sm"><b>Avançados:</b><li>Adobe Animate</li><li>Paint.NET</li></ul></div><div class="col-sm"><b>Médios:</b><li>Autodesk Maya</li><li>Aseprite</li><li>Construct</li><li>Sony Vegas</li><li>Unity</li><li>C#</li><li>Pacote Office</li><li>HTML, CSS e JS</li><li>Unreal Blueprints</li><li>Blender</li><li>Python</li></ul></div><div class="col-sm"><b>Básicos:</b><li>Arduino</li><li>C++</li><li>Ruby</li><li>Java</li><li>Illustrator</li><li>Photoshop</li></div></div></div>';
-        
-        var area = '<div class="row"><div class="col-sm"><b>Programação:</b><li>Construct</li><li>Unity3D</li><li>C#</li><li>HTML, CSS e JS</li><li>Unreal Blueprints</li><li>Python</li><li>Arduino</li><li>C++</li><li>Ruby</li><li>Java</li></ul></div><div class="col-sm"><b>Design digital:</b><li>Adobe Animate</li><li>Paint.NET</li><li>Autodesk Maya</li><li>Aseprite</li><li>Blender</li><li>Illustrator</li><li>Photoshop</li></div>  <div class="col-sm"><b>Outros:</b><li>Sony Vegas</li><li>Pacote Office</li></div></div></div>';
-        
-        $("#order").change(function() {
-          
-          if (document.getElementById("xp").selected==true){
-            document.getElementById("columns").innerHTML = xp;
-          }
-          
-          else if (document.getElementById("area").selected==true){
-            document.getElementById("columns").innerHTML = area;
-          }
-          
-        });
-        
-      </script>
+      <br>
       
-      <div class="container" id="columns">
-        <script>
-          document.getElementById("columns").innerHTML = xp;
-        </script>
+      <div class="container" align="left">
+        
+        <div class="row">
+
+          <script>
+
+            var xp = '<div class="row"><div class="col-sm"><b>Avançados:</b><li>Adobe Animate</li><li>Paint.NET</li></ul></div><div class="col-sm"><b>Médios:</b><li>Autodesk Maya</li><li>Pixel art</li><li>Unity</li><li>C#</li><li>Construct</li><li>Sony Vegas</li><li>Pacote Office</li><li>HTML, CSS e JS</li><li>Blender</li><li>Unreal (Blueprints)</li><li>Python</li><li>Arduino</li></ul></div><div class="col-sm"><b>Básicos:</b><li>C++</li><li>Godot</li><li>Ruby on Rails</li><li>Java</li><li>HitFilm Express</li><li>Illustrator</li><li>Photoshop</li></div></div></div>';
+
+            var area = '<div class="row"><div class="col-sm"><b>Programação:</b><li>Unity</li><li>C#</li><li>Construct</li><li>HTML, CSS e JS</li><li>Unreal (Blueprints)</li><li>Python</li><li>Arduino</li><li>C++</li><li>Godot</li><li>Ruby on Rails</li><li>Java</li></ul></div><div class="col-sm"><b>Design digital:</b><li>Adobe Animate</li><li>Paint.NET</li><li>Autodesk Maya</li><li>Pixel art</li><li>Blender</li><li>Illustrator</li><li>Photoshop</li></div>  <div class="col-sm"><b>Outros:</b><li>Sony Vegas</li><li>Pacote Office</li><li>HitFilm Express</li></div></div></div>';
+
+            $("#order").change(function() {
+
+              if (document.getElementById("xp").selected==true){
+                document.getElementById("columns").innerHTML = xp;
+              }
+
+              else if (document.getElementById("area").selected==true){
+                document.getElementById("columns").innerHTML = area;
+              }
+
+            });
+
+          </script>
+
+          <!-- Necessário melhorar para adicionar: MySQL, MVC, Lua -->
+          <div id="columns" style="float: left;">
+            <script>
+              document.getElementById("columns").innerHTML = xp;
+            </script>
+          </div>
+            
+        </div>
+        
       </div>
+      
       <br>
 
       <b>Portfolio:</b>
-
-      <div class="row">
+      <br>
+    
+      <div class="container-fluid">
         
-        <!--<div class="card col">
-          <a href="http://bit.ly/elias-papp-artwork">
-            <img src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2FInstagram.png?1551032343868" width="100%" alt="Portfolio: Instagram"/>
-          </a>
-        </div>-->
-
-        <div class="card" style="width: 20%;">
-          <a href="http://bit.ly/free-for-all-racing" target="_blank">
-            <img class="card-img-top" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2Fce50a603-3c8d-45e2-b372-fb4bbd2804be.image.png?v=1577928989186" alt="Jogo 3D: Free For All Racing"/>
-            <p class="card-title" style="font-size: 1.5vw; font-weight: bold;" align="middle">Free for All Racing</p>
-            <p class="card-text" style="font-size: 1.5vw;" align="middle">Jogo 3D em Unity (2018)</p>
-          </a>
+        <div class="row">
+          
+          <div class="card col">
+            <a class="text-dark" href="https://bit.ly/blackout-404" target="_blank">
+              <img class="card-img-top" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FBlackout%20404.png?v=1586133958846" id="blackout404img" alt="Jogo 2D: Blackout 404" />
+              <p class="card-title" style="font-size: 1.5vw; font-weight: bold;" align="middle">Blackout 404 Beta</p>
+              <p class="card-text" style="font-size: 1.5vw;" align="middle">Construct (2019)</p>
+            </a>
+          </div>
+          
+          <div class="card col">
+            <a class="text-dark" href="https://bit.ly/free-for-all-racing" target="_blank">
+              <img class="card-img-top" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2Fce50a603-3c8d-45e2-b372-fb4bbd2804be.image.png?v=1577928989186" alt="Jogo 3D: Free For All Racing"/>
+              <p class="card-title" style="font-size: 1.5vw; font-weight: bold;" align="middle">Free for All Racing Alpha</p>
+              <p class="card-text" style="font-size: 1.5vw;" align="middle">Unity (2018)</p>
+            </a>
+          </div>
+          
+          <div class="card col">
+            <a class="text-dark" href="https://bit.ly/aula-JS-Pong" target="_blank">
+              <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2FPong%20Javascript.png?1551032343717" alt="Aula: Pong em Javascript"/>
+              <p class="card-title" style="font-size: 1.5vw; font-weight: bold;" align="middle">Pong em Javascript</p>
+              <p class="card-text" style="font-size: 1.5vw;" align="middle">JavaScript (2018)</p>
+            </a>
+          </div>
+          
+          <div class="card col">
+            <a class="text-dark" href="https://bit.ly/jogo2d-death-match-pong" target="_blank">
+              <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2FDeath%20Match%20Pong.png?1551032345086" id="deathmatchpongid" alt="Jogo 2D: Death Match Pong"/>
+              <p class="card-title" style="font-size: 1.5vw; font-weight: bold;" align="middle">Death Match Pong</p>
+              <p class="card-text" style="font-size: 1.5vw;" align="middle">Python (2017)</p>
+            </a>
+          </div>
+          
+          <div class="card col">
+            <a class="text-dark" href="https://bit.ly/ani2d-SUN" target="_blank">
+              <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2FSUN%20animations.png?1551032343460" alt="Animações 2D: Survivors Under Nation (S.U.N.)"/>
+              <p class="card-title" style="font-size: 1.5vw; font-weight: bold;" align="middle">S.U.N. (Animações)</p>
+              <p class="card-text" style="font-size: 1.5vw;" align="middle">Flash (2017)</p>
+            </a>
+          </div>
+          
         </div>
         
-        <div class="card" style="width: 20%;">
-          <a href="http://bit.ly/aula-JS-Pong" target="_blank">
-            <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2FPong%20Javascript.png?1551032343717" alt="Aula: Pong em Javascript"/>
-            <p class="card-title" style="font-size: 1.5vw; font-weight: bold;" align="middle">Pong em Javascript</p>
-            <p class="card-text" style="font-size: 1.5vw;" align="middle">Videoaula (2018)</p>
-          </a>
-        </div>
-        
-        <div class="card" style="width: 20%;">
-          <a href="http://bit.ly/jogo2d-death-match-pong" target="_blank">
-          <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2FDeath%20Match%20Pong.png?1551032345086" alt="Jogo 2D: Death Match Pong"/>
-            <p class="card-title" style="font-size: 1.5vw; font-weight: bold;" align="middle">Death Match Pong</p>
-            <p class="card-text" style="font-size: 1.5vw;" align="middle">Jogo 2D em Python (2017)</p>
-          </a>
-        </div>
-        
-        <div class="card" style="width: 20%;">
-          <a href="http://bit.ly/ani2d-SUN" target="_blank">
-            <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2FSUN%20animations.png?1551032343460" alt="Animações 2D: Survivors Under Nation (S.U.N.)"/>
-            <p class="card-title" style="font-size: 1.5vw; font-weight: bold;" align="middle">S.U.N. (Animações)</p>
-            <p class="card-text" style="font-size: 1.5vw;" align="middle">Animações 2D (2017)</p>
-          </a>
-        </div>
-        
-        <div class="card" style="width: 20%;">
-          <a href="http://bit.ly/mod3d-tenis" target="_blank">
-            <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2F3D%20shoe.png?1551032343980" alt="Modelo 3D: Tênis Black Free 12 Molas"/>
-            <p class="card-title" style="font-size: 1.5vw; font-weight: bold;" align="middle">Tênis Black Free</p>
-            <p class="card-text" style="font-size: 1.5vw;" align="middle">Modelo 3D (2016)</p>
-          </a>
+        <div class="row">
+          
+          <div class="card col">
+            <a class="text-dark" href="https://bit.ly/mod3d-tenis" target="_blank">
+              <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2F3D%20shoe.png?1551032343980" alt="Modelo 3D: Tênis Black Free 12 Molas"/>
+              <p class="card-title" style="font-size: 1.2vw; font-weight: bold;" align="middle">Tênis Black Free</p>
+              <p class="card-text" style="font-size: 1.2vw;" align="middle">Maya (2016)</p>
+            </a>
+          </div>
+          
+          <div class="card col">
+            <a class="text-dark" href="https://bit.ly/ani3d-atirando" target="_blank">
+              <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2F3D%20Animation%203.png?1551032344330" width="100%" alt="Animação 3D: Personagem atirando"/>
+              <p class="card-title" style="font-size: 1.2vw; font-weight: bold;" align="middle">Personagem atirando</p>
+              <p class="card-text" style="font-size: 1.2vw;" align="middle">Blender (2016)</p>
+            </a>
+          </div>
+          
+          <div class="card col">
+            <a class="text-dark" href="https://bit.ly/ani3d-movimento" target="_blank">
+              <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2F3D%20Animation%202.png?1551032344641" width="100%" alt="Animação 3D: Movimentação de personagem"/>
+              <p class="card-title" style="font-size: 1.2vw; font-weight: bold;" align="middle">Movimentação de pers.</p>
+              <p class="card-text" style="font-size: 1.2vw;" align="middle">Blender (2016)</p>
+            </a>
+          </div>
+          
+          <div class="card col">
+            <a class="text-dark" href="https://bit.ly/ani2d-acao" target="_blank">
+              <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2F2D%20Animation.png?1551032343267" width="100%" alt="Animação 2D: Cena de ação"/>
+              <p class="card-title" style="font-size: 1.2vw; font-weight: bold;" align="middle">Cena de ação</p>
+              <p class="card-text" style="font-size: 1.2vw;" align="middle">Flash (2015-2016)</p>
+            </a>
+          </div>
+          
+          <div class="card col">
+            <a class="text-dark" href="https://bit.ly/jogo2d-madness-cust2" target="_blank">
+              <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2FMadness%20Customization%202.png?1551032343894" width="100%" alt="Jogo 2D: Madness Customization 2 Alpha"/>
+              <p class="card-title" style="font-size: 1.2vw; font-weight: bold;" align="middle">M. Customization 2 Alpha</p>
+              <p class="card-text" style="font-size: 1.2vw;" align="middle">Flash (2014-2015)</p>
+            </a>
+          </div>
+          
+          <div class="card col">
+            <a class="text-dark" href="http://bit.ly/jogo2d-madness-cust" target="_blank">
+              <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2FMadness%20Customization%201.png?1551032343076" width="100%" alt="Jogo 2D: Madness Customization"/>
+              <p class="card-title" style="font-size: 1.2vw; font-weight: bold;" align="middle">Madness Customization</p>
+              <p class="card-text" style="font-size: 1.2vw;" align="middle">Flash (2013)</p>
+            </a>
+          </div>
+          
         </div>
         
       </div>
       
-      <div class="row">
-        
-        <div class="card" style="width: 20%;">
-          <a href="http://bit.ly/ani3d-atirando" target="_blank">
-            <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2F3D%20Animation%203.png?1551032344330" width="100%" alt="Animação 3D: Personagem atirando"/>
-            <p class="card-title" style="font-size: 1.5vw; font-weight: bold;" align="middle">Personagem atirando</p>
-            <p class="card-text" style="font-size: 1.5vw;" align="middle">Animação 3D (2016)</p>
-          </a>
-        </div>
-        
-        <div class="card" style="width: 20%;">
-          <a href="http://bit.ly/ani3d-movimento" target="_blank">
-            <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2F3D%20Animation%202.png?1551032344641" width="100%" alt="Animação 3D: Movimentação de personagem"/>
-            <p class="card-title" style="font-size: 1.5vw; font-weight: bold;" align="middle">Movimentação de pers.</p>
-            <p class="card-text" style="font-size: 1.5vw;" align="middle">Animação 3D (2016)</p>
-          </a>
-        </div>
-        
-        <div class="card" style="width: 20%;">
-          <a href="http://bit.ly/ani2d-acao" target="_blank">
-            <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2F2D%20Animation.png?1551032343267" width="100%" alt="Animação 2D: Cena de ação"/>
-            <p class="card-title" style="font-size: 1.5vw; font-weight: bold;" align="middle">Cena de ação</p>
-            <p class="card-text" style="font-size: 1.5vw;" align="middle">Animação 2D (2015-2016)</p>
-          </a>
-        </div>
-        
-        <div class="card" style="width: 20%;">
-          <a href="http://bit.ly/jogo2d-madness-cust2" target="_blank">
-            <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2FMadness%20Customization%202.png?1551032343894" width="100%" alt="Jogo 2D: Madness Customization 2 Alpha"/>
-            <p class="card-title" style="font-size: 1.5vw; font-weight: bold;" align="middle">Madness Customization 2</p>
-            <p class="card-text" style="font-size: 1.5vw;" align="middle">Jogo 2D (2014-2015)</p>
-          </a>
-        </div>
-        
-        <div class="card" style="width: 20%;">
-          <a href="http://bit.ly/jogo2d-madness-cust" target="_blank">
-            <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2FMadness%20Customization%201.png?1551032343076" width="100%" alt="Jogo 2D: Madness Customization"/>
-            <p class="card-title" style="font-size: 1.5vw; font-weight: bold;" align="middle">Madness Customization</p>
-            <p class="card-text" style="font-size: 1.5vw;" align="middle">Jogo 2D (2013)</p>
-          </a>
-        </div>
-
-      </div>
-    
     </div>
+    
+    <!-- Include Footer -->
+    <div include-html="footer.html"></div>
+  
+    <!-- Calling the function to include HTML files -->
+    <script>
+      includeHTML();
+    </script>
     
   </body>
   
