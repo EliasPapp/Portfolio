@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="/jspong.css">
+    <link rel="stylesheet" href="./jspong.css">
     
     <!-- Javascript Game
     <script src="/jspong.js" defer></script>
@@ -60,7 +60,7 @@
     <div class="row">
       
       <!-- HTML Buttons -->
-      <div class="col">
+      <div class="col" style="margin: 0;">
 
         <b class="btn btn-primary" id="btnW" role="button" onclick="btnW()">W</b>
         <br><br>
@@ -69,14 +69,14 @@
       </div>
 
       <!-- Canvas: game window -->
-      <div class="col">
+      <div class="col" style="margin: 0;">
 
         <canvas id="game" width="800" height="600"></canvas>
         <!--<script type="text/javascript" src="pong.js"></script>-->
 
       </div>
       
-      <div class="col">
+      <div class="col" style="margin: 0;">
 
         <b class="btn btn-danger" id="btnUp" role="button" onclick="btnUp()">⬆</b>
         <br><br>
@@ -95,7 +95,7 @@
 
       function resize() {
         
-        var height = window.innerHeight;
+        var height = window.innerHeight - 17;
         var ratio = canvas.width/canvas.height;
         var width = height * ratio;
         
