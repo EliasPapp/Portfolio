@@ -220,7 +220,7 @@
           
           <div class="card col">
             <a class="text-dark" href="https://bit.ly/blackout-404" target="_blank">
-              <img class="card-img-top" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FBlackout%20404.png?v=1586133958846" id="blackout404img" alt="Jogo 2D: Blackout 404" />
+              <img class="card-img-top" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FBlackout%20404.png?v=1589213489955" id="blackout404img" alt="Jogo 2D: Blackout 404" />
               <p class="card-title" style="font-size: 1.5vw; font-weight: bold;" align="middle">Blackout 404 Beta</p>
               <p class="card-text" style="font-size: 1.5vw;" align="middle">Construct (2019)</p>
             </a>
