@@ -41,7 +41,7 @@ p.card-title {
 }
 
 .star:before {
-    content:'\1f7ca';
+    content:'\2605';
 }
 
 .star.on {
@@ -50,7 +50,7 @@ p.card-title {
 }
 
 .star.half:after {
-    content:'\1f7ca';
+    content:'\2605';
     color: #EED888;
     text-shadow: 0 0.2px 2px #DDAA00;
     position: absolute;
