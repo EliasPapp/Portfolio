@@ -1,0 +1,84 @@
+#portrait {
+  width: 140px;
+  height: auto;
+  object-fit: cover;
+}
+
+a.text-dark {
+  padding: 0 7px 7px 7px;
+}
+
+div.col {
+  margin: 3px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+}
+
+div.col button {
+  padding: 0;
+}
+
+div.col button > [class*='col'] {
+  display: flex;
+  flex-direction: column;
+}
+
+div.alert.bg-light {
+  padding: 2px 2px;
+  margin: 2px;
+}
+
+p.card-title {
+  margin: 0;
+  font-size: 13px;
+  line-height: 17px;
+}
+
+.star {
+    color: black;
+}
+
+.star:before {
+    content:'\1f7ca';
+}
+
+.star.on {
+    color: #EED888;
+    text-shadow: 0 0.2px 2px #DDAA00;
+}
+
+.star.half:after {
+    content:'\1f7ca';
+    color: #EED888;
+    text-shadow: 0 0.2px 2px #DDAA00;
+    position: absolute;
+    margin-left: -12px;
+    width: 6px;
+    overflow: hidden;
+}
+
+div.card.bg-dark {
+  width: 4rem;
+  margin: 2px;
+  height: 6.2rem;
+  /* height: 5.2rem; */
+}
+
+img.card-img-top.border {
+  background-color: white;
+}
+
+h5.card-title {
+  font-size: 1.4vw;
+}
+
+p.card-text {
+  font-size: 1.1vw;
+}
+
+.boxes {
+  padding: 0 0 20px 0;
+  /* margin: 10px 0; */
+}

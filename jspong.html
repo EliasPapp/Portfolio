@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./jspong.css">
     
     <!-- Javascript Game
-    <script src="/jspong.js" defer></script>
+    <script src="./jspong.js" defer></script>
      -->
 
     <!-- Bootstrap - CSS -->
@@ -130,8 +130,8 @@
 
       var ballx=400, bally=300;
       var bw=20, bh=20;
-      var bvelx = 12;
-      var bvely = 12;
+      var bvelx = 5;
+      var bvely = 5;
       var vel = 15;
       var setacima = false;
       var setabaixo = false;
@@ -249,7 +249,7 @@
         bally = 300;
         pt1 ++;
         bvelx = + bvelx;
-        bvelx = -8;
+        bvelx = -5;
         bvely = Math.floor (Math.random() *16) - 8;
         }
         if (ballx < -30){
@@ -257,7 +257,7 @@
         bally = 300;
         pt2 ++;
         bvelx = + bvelx;
-        bvelx = 8;
+        bvelx = 5;
         bvely = Math.floor (Math.random() *16) - 8;
         }
         if (bally > y1-bh && bally < y1+h1 && ballx+bw >= x1){
