@@ -8,21 +8,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <!-- CSS
-    <link rel="stylesheet" href="/#.css">
-    -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="./index.css">
     
     <!-- JavaScript
-    <script src="/#.js" defer></script>
+    <script src="./curriculum.js" defer></script>
     -->
     
     <!-- Bootstrap - CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-    <title>Página Inicial</title>
+            
+    <title>Elias Papp - Currículo</title>
     
     <!-- Include HTML files into this one (Header and Footer) -->
-    <script>
+    <script type="text/javascript">
+      
       function includeHTML() {
         var z, i, elmnt, file, xhttp;
         /* Loop through a collection of all HTML elements: */
@@ -50,6 +50,7 @@
           }
         }
       }
+      
     </script>
     
   </head>
@@ -58,18 +59,440 @@
     <!-- Include Header -->
     <div include-html="header.html"></div>
     
-    <!-- Content -->
+    <!-- Basic information -->
+    <div class="container boxes">
+      
+      <div class="row bg-light">
+        
+        <!--<div style="display: inline-block;">-->
+        <div class="col-auto p-2 rounded-full">
+          <img class="card-img" id="portrait" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FSuperGeeks20192%20cut2.png?v=1577927737105" alt="Imagem de perfil"/>
+        </div>
+        
+        <div class="col">
+          <ul style="list-style: none; padding: 0;">
+            <h4>Elias Papp Freire</h4>
+            <h5>Game developer, programador, artista 2D/3D e instrutor.</h5>
+            <li>21 anos, solteiro</li>
+            <li>R. Francisco Leite Esquerdo, 399</li>
+            <li>Jardim Celeste, São Paulo - SP, Brasil - 05528-040</li>
+          </ul>
+        </div>
+
+        <div class="col-auto h-100 align-self-start p-2">
+          <button type="button" class="btn btn-success d-print-none" style="font-size: 17px;" onclick="window.setTimeout(window.print, 10);">Imprimir</button>
+        </div>
+                  
+      </div>
+      
+      <div class="row bg-light">
+        
+        <a class="text-dark" href="./#"><img src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FE-mail.png?v=1590364650924" height="25px"/>&nbsp; eliaspapp@outlook.com</a>
+        <a class="text-dark" href="./#"><img src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FPhone.png?v=1590364656266" height="25px"/>&nbsp; (11) 97685-3020</a>
+        <a class="text-dark" href="https://eliaspapp.github.io/Portfolio/"><img src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FLink%2050px.png?v=1590455455720" height="25px"/>&nbsp; eliaspapp.github.io/Portfolio</a>
+
+        <a class="text-dark" href="https://www.youtube.com/channel/UCrewSZ0GtHM0GMVgJj-wZVw" target="_blank"><img src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FYoutube%2050px.png?v=1590453720916" height="25px"/>&nbsp; Youtube</a>
+        <a class="text-dark" href="http://bit.ly/elias-papp-artwork" target="_blank"><img src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FInstagram%2050px.png?v=1590453723650" height="25px"/>&nbsp; Instagram</a>
+        <a class="text-dark" href="https://github.com/EliasPapp/" target="_blank"><img src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FGithub%2050px.png?v=1590453715941" height="25px"/>&nbsp; GitHub</a>
+        <a class="text-dark" href="https://www.linkedin.com/in/elias-p-5466a0132/" target="_blank"><img src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FLinkedin%2050px.png?v=1590453713789" height="25px"/>&nbsp; LinkedIn</a>
+
+      </div>
+      
+      <!-- Content -->
+      <div class="row">
+                   
+        <div class="col border-right">
+
+          <div class="container boxes">
+            <h5>Objetivo:</h5>
+            Atuar com uma equipe de desenvolvimento de games, web ou softwares.
+          </div>
+
+          <div class="container boxes">
+            <h5>Experiência profissional:</h5>
+            <li><a class="text-dark dropdown-toggle" data-toggle="collapse" href="#SuperGeeks" role="button" aria-expanded="false">Instrutor Pleno de Programação e Robótica -<br> SuperGeeks Butantã (02/2019 – Atualmente)</a></li>
+            <div class="collapse d-print-block" id="SuperGeeks">
+              <div>
+                <p>Ministro aulas de programação de jogos e sites, robótica e recreações para crianças e adolescentes a partir dos 6 anos. Além disso, colaboro com edições de vídeos, animações e artes, atendimento ao cliente e matrículas, auxiliando na administração.</p>
+              </div>
+            </div>
+
+            <li><a class="text-dark dropdown-toggle" data-toggle="collapse" href="#PenseBlue" role="button" aria-expanded="false">Aprendiz em Desenvolvimento Wordpress -<br> Agência Pense Blue (05/2017 – 09/2017)</a></li>
+            <div class="collapse d-print-block" id="PenseBlue">
+              <div>
+                <p>Trabalhei home office com foco em desenvolvimento de sites a partir de wireframes usando a ferramenta Wordpress, atuando também em criação de artes para e-Books.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="container boxes">
+            <h5>Formação acadêmica:</h5>
+            <li>Tecnólogo em Jogos Digitais - FATEC Carapicuíba (02/2017 – 12/2019)</li>
+            <li>Técnico em Programação de Jogos Digitais - ETEC Guaracy Silveira ext. Godofredo Furtado (07/2015 – 12/2016)</li>
+            <li>Percussionista - Liceu de Artes (01/2006 – 12/2011)</li>
+          </div>
+
+          <div class="container boxes">
+            <h5>Idiomas:</h5>
+            <li>Português: fluente</li>
+            <li>Inglês: avançado</li>
+          </div>
+        
+        </div>
+
+        <div class="col" style="text-align: justify;">
+          
+          <h5>Conhecimentos:</h5>
+
+          <div class="container boxes justify-content-around">
+            
+            <h6>Programas:</h6>
+            
+            <div class="alert float-left border rounded-0 bg-light">
+              <p class="card-title text-center">Vetorização<br>e animação</p>
+              
+              <div class="card float-left bg-dark">
+                <img class="card-img-top border rounded" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FAnimate.png?v=1590433124519">
+                <p class="card-title text-center text-light">Animate
+                  <br><span class="star on"></span><span class="star on"></span><span class="star on"></span><span class="star on"></span><span class="star half"></span>
+                </p>
+              </div>
+            </div>
+            
+            <div class="alert float-left border rounded-0 bg-light">
+              <p class="card-title text-center">Edição de<br>imagens</p>
+              
+              <div class="card float-left bg-dark">
+                <img class="card-img-top border rounded" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FPaint.NET.png?v=1590433161195">
+                <p class="card-title text-center text-light">Paint.NET
+                  <br><span class="star on"></span><span class="star on"></span><span class="star on"></span><span class="star on"></span><span class="star"></span>
+                </p>
+              </div>
+            </div>
+                        
+            <div class="alert float-left border rounded-0 bg-light">
+              
+              <p class="card-title text-center">Game engines<br>&nbsp;</p>
+
+              <div class="card float-left bg-dark">
+                <img class="card-img-top border rounded" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FUnity%20a.png?v=1590430844351">
+                <p class="card-title text-center text-light">Unity
+                  <br><span class="star on"></span><span class="star on"></span><span class="star on"></span><span class="star on"></span><span class="star"></span>
+                </p>
+              </div>
+
+              <div class="card float-left bg-dark">
+                <img class="card-img-top border rounded" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FConstruct.png?v=1590433136883">
+                <p class="card-title text-center text-light">Construct
+                  <br><span class="star on"></span><span class="star on"></span><span class="star on"></span><span class="star on"></span><span class="star"></span>
+                </p>
+              </div>
+
+              <div class="card float-left bg-dark">
+                <img class="card-img-top border rounded" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FUE4.png?v=1590433174162">
+                <p class="card-title text-center text-light">Unreal
+                  <br><span class="star on"></span><span class="star on"></span><span class="star on"></span><span class="star"></span><span class="star"></span>
+                </p>
+              </div>
+
+              <div class="card float-left bg-dark">
+                <img class="card-img-top border rounded" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FGodot.png?v=1590444185487">
+                <p class="card-title text-center text-light">Godot
+                  <br><span class="star on"></span><span class="star on"></span><span class="star half"></span><span class="star"></span><span class="star"></span>
+                </p>
+              </div>
+            </div>
+
+            <div class="alert float-left border rounded-0 bg-light">
+              <p class="card-title text-center">Pixel art<br>&nbsp;</p>
+
+              <div class="card float-left bg-dark">
+                <img class="card-img-top border rounded" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FAseprite.png?v=1590433130948">
+                <p class="card-title text-center text-light">Aseprite
+                  <br><span class="star on"></span><span class="star on"></span><span class="star on"></span><span class="star on"></span><span class="star"></span>
+                </p>
+              </div>
+            </div>
+
+            <div class="alert float-left border rounded-0 bg-light">
+              <p class="card-title text-center">Modelagem e<br>animação 3D</p>
+
+              <div class="card float-left bg-dark">
+                <img class="card-img-top border rounded" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FMaya.png?v=1590433155037">
+                <p class="card-title text-center text-light">Maya
+                  <br><span class="star on"></span><span class="star on"></span><span class="star on"></span><span class="star on"></span><span class="star"></span>
+                </p>
+              </div>
+
+              <div class="card float-left bg-dark">
+                <img class="card-img-top border rounded" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FBlender.png?v=1590433128831">
+                <p class="card-title text-center text-light">Blender
+                  <br><span class="star on"></span><span class="star on"></span><span class="star on"></span><span class="star"></span><span class="star"></span>
+                </p>
+              </div>
+            </div>
+
+            <div class="alert float-left border rounded-0 bg-light">
+              <p class="card-title text-center">Edição de vídeos<br>&nbsp;</p>
+
+              <div class="card float-left bg-dark">
+                <img class="card-img-top border rounded" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FSony%20Vegas.png?v=1590433169055">
+                <p class="card-title text-center text-light">Vegas
+                  <br><span class="star on"></span><span class="star on"></span><span class="star on"></span><span class="star half"></span><span class="star"></span>
+                </p>
+              </div>
+
+              <div class="card float-left bg-dark">
+                <img class="card-img-top border rounded" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FHitfilm%20Express.png?v=1590433147954">
+                <p class="card-title text-center text-light">HitFilm
+                  <br><span class="star on"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
+                </p>
+              </div>
+            </div>
+
+            <div class="alert float-left border rounded-0 bg-light">
+              <p class="card-title text-center">Ferr. para<br> escritório</p>
+
+              <div class="card float-left bg-dark">
+                <img class="card-img-top border rounded" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FOffice.png?v=1590433158108">
+                <p class="card-title text-center text-light">Office
+                  <br><span class="star on"></span><span class="star on"></span><span class="star on"></span><span class="star"></span><span class="star"></span>
+                </p>
+              </div>
+            </div>
+
+            <div class="alert float-left border rounded-0 bg-light">
+              <p class="card-title text-center">Robótica<br>&nbsp;</p>
+
+              <div class="card float-left bg-dark">
+                <img class="card-img-top border rounded" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FArduino%20IDE.png?v=1590433125828">
+                <p class="card-title text-center text-light">Arduino
+                  <br><span class="star on"></span><span class="star on"></span><span class="star half"></span><span class="star"></span><span class="star"></span>
+                </p>
+              </div>
+            </div>
+
+          </div>
+        
+
+          <div class="container boxes">
+
+            <h6>Linguagens:</h6>
+
+            <div class="card float-left bg-dark">
+              <img class="card-img-top border rounded" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FC%23.png?v=1590433136819">
+              <p class="card-title text-center text-light">C#Vegas
+                <br><span class="star on"></span><span class="star on"></span><span class="star on"></span><span class="star half"></span><span class="star"></span>
+              </p>
+            </div>
+
+            <div class="card float-left bg-dark">
+              <img class="card-img-top border rounded" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FHTML%20CSS%20JS.png?v=1590451554931">
+              <p class="card-title text-center text-light">HTML/CSS
+                <br><span class="star on"></span><span class="star on"></span><span class="star on"></span><span class="star half"></span><span class="star"></span>
+              </p>
+            </div>
+
+            <div class="card float-left bg-dark">
+              <img class="card-img-top border rounded" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FJS.png?v=1590451822566">
+              <p class="card-title text-center text-light">Javascript
+                <br><span class="star on"></span><span class="star on"></span><span class="star on"></span><span class="star"></span><span class="star"></span>
+              </p>
+            </div>
+
+            <div class="card float-left bg-dark">
+              <img class="card-img-top border rounded" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FPython.png?v=1590433163142">
+              <p class="card-title text-center text-light">Python
+                <br><span class="star on"></span><span class="star on"></span><span class="star on"></span><span class="star"></span><span class="star"></span>
+              </p>
+            </div>
+
+            <div class="card float-left bg-dark">
+              <img class="card-img-top border rounded" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FGodot.png?v=1590444185487">
+              <p class="card-title text-center text-light">GDScript
+                <br><span class="star on"></span><span class="star on"></span><span class="star half"></span><span class="star"></span><span class="star"></span>
+              </p>
+            </div>
+
+            <div class="card float-left bg-dark">
+              <img class="card-img-top border rounded" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FC%2B%2B.png?v=1590433134627">
+              <p class="card-title text-center text-light">C++
+                <br><span class="star on"></span><span class="star half"></span><span class="star"></span><span class="star"></span><span class="star"></span>
+              </p>
+            </div>
+
+            <div class="card float-left bg-dark">
+              <img class="card-img-top border rounded" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FRuby.png?v=1590433166781">
+              <p class="card-title text-center text-light">Ruby Rails
+                <br><span class="star on"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
+              </p>
+            </div>
+
+            <!--
+            <li>Softwares:
+              <ul>
+                <li>Vetorização e animação 2D: Adobe Animate.</li>
+                <li>Game engines: Unity, Construct, Unreal, Godot.</li>
+                <li>Modelagem e animação 3D: Autodesk Maya, Blender.</li>
+                <li>Pixel art: Aseprite, piskel.</li>
+                <li>Edição de imagens: Paint.NET.</li>
+                <li>Escritório: Microsoft Office.</li>
+                <li>Edição de vídeos: Sony Vegas, HitFilm Express.</li>
+                <li>Robótica: Arduino IDE.</li>
+              </ul>
+            </li>
+            <li>Linguagens: C#, HTML/CSS, JavaScript, Python, GDScript, C++, Ruby on Rails.</li>
+
+            <div class="row">
+
+              <div class="col-sm-2">
+                <li>Adobe Animate</li>
+                <li>Paint.NET</li>
+              </div>
+
+              <div class="col-sm-2">
+                <li>Pixel art</li>
+                <li>Unity</li>
+                <li>C#</li>
+                <li>Construct</li>
+                <li>Autodesk Maya</li>
+                <li>Sony Vegas</li>
+                <li>Pacote Office</li>
+                <li>HTML, CSS e JS</li>
+                <li>Blender</li>
+                <li>Unreal (Blueprints)</li>
+                <li>Python</li>
+                <li>Arduino</li>
+              </div>
+
+              <div class="col-sm-2">
+                <li>Godot</li>
+                <li>HitFilm Express</li>
+                <li>C++</li>
+                <li>Ruby on Rails</li>
+              </div>
+
+            </div>
+            -->
+
+          </div>
+        
+        </div>
+          
+      </div>
+      
+      <div>
+        
+        <h5>Portfolio:</h5>
+        
+        <div class="row">
+
+          <div class="col">
+            <button class="btn btn-light text-dark shadow" href="https://bit.ly/blackout-404" target="_blank">
+              <img class="card-img-top" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2FBlackout%20404.png?v=1589213489955" alt="Jogo 2D: Blackout 404" />
+              <h5 class="card-title">Blackout 404<br>
+              Beta</h5>
+              <p class="card-text">Jogo em Construct<br>
+              (2019)</p>
+            </button>
+          </div>
+
+          <div class="col">
+            <button class="btn btn-light text-dark shadow" href="https://bit.ly/free-for-all-racing" target="_blank">
+              <img class="card-img-top" src="https://cdn.glitch.com/1b22e626-c0ce-4b42-9ef1-626433c2bf7f%2Fce50a603-3c8d-45e2-b372-fb4bbd2804be.image.png?v=1577928989186" alt="Jogo 3D: Free For All Racing"/>
+              <h5 class="card-title">Free For All Racing<br>
+              Alpha</h5>
+              <p class="card-text">Jogo em Unity<br>
+              (2018)</p>
+            </button>
+          </div>
+
+          <div class="col">
+            <button class="btn btn-light text-dark shadow" href="https://bit.ly/aula-JS-Pong" target="_blank">
+              <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2FPong%20Javascript.png?1551032343717" alt="Aula: Pong em Javascript"/>
+              <h5 class="card-title">Criando um Pong<br>
+              em Javascript</h5>
+              <p class="card-text">Videoaula<br>
+              (2018)</p>
+            </button>
+          </div>
+
+          <div class="col">
+            <button class="btn btn-light text-dark shadow" href="https://bit.ly/jogo2d-death-match-pong" target="_blank">
+              <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2FDeath%20Match%20Pong.png?1551032345086" alt="Jogo 2D: Death Match Pong"/>
+              <h5 class="card-title">Death Match Pong<br>&nbsp;</h5>
+              <p class="card-text">Jogo em Python<br>
+              (2017)</p>
+            </button>
+          </div>
+
+          <div class="col">
+            <button class="btn btn-light text-dark shadow" href="https://bit.ly/ani2d-SUN" target="_blank">
+              <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2FSUN%20animations.png?1551032343460" alt="Animações 2D: Survivors Under Nation (S.U.N.)"/>
+              <h5 class="card-title">Sons Under Nation:<br>Assets</h5>
+              <p class="card-text">Animações em Flash<br>
+              (2017)</p>
+            </button>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col">
+            <button class="btn btn-light text-dark shadow"  href="https://bit.ly/mod3d-tenis" target="_blank">
+              <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2F3D%20shoe.png?1551032343980" alt="Modelo 3D: Tênis Black Free 12 Molas"/>
+              <h5 class="card-title">Tênis Black Free</h5><br>
+              <p class="card-text">Modelo em Maya<br> (2016)</p>
+            </button>
+          </div>
+
+          <div class="col">
+            <button class="btn btn-light text-dark shadow" href="https://bit.ly/ani3d-atirando" target="_blank">
+              <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2F3D%20Animation%203.png?1551032344330" alt="Animação 3D: Personagem atirando"/>
+              <h5 class="card-title">Personagem<br> atirando</h5>
+              <p class="card-text">Animação em Blender<br> (2016)</p>
+            </button>
+          </div>
+
+          <div class="col">
+            <button class="btn btn-light text-dark shadow"  href="https://bit.ly/ani3d-movimento" target="_blank">
+              <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2F3D%20Animation%202.png?1551032344641" alt="Animação 3D: Movimentação de personagem"/>
+              <h5 class="card-title">Movim. de<br> personagem</h5>
+              <p class="card-text">Animação em Blender<br> (2016)</p>
+            </button>
+          </div>
+
+          <div class="col">
+            <button class="btn btn-light text-dark shadow"  href="https://bit.ly/ani2d-acao" target="_blank">
+              <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2F2D%20Animation.png?1551032343267" alt="Animação 2D: Cena de ação"/>
+              <h5 class="card-title">Cena de ação</h5><br>
+              <p class="card-text">Animação em Flash<br> (2015-2016)</p>
+            </button>
+          </div>
+
+          <div class="col">
+            <button class="btn btn-light text-dark shadow"  href="https://bit.ly/jogo2d-madness-cust2" target="_blank">
+              <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2FMadness%20Customization%202.png?1551032343894" alt="Jogo 2D: Madness Customization 2 Alpha"/>
+              <h5 class="card-title">Madness
+              <br>Cust. 2 Alpha</h5>
+              <p class="card-text">Jogo em Flash<br> (2014-2015)</p>
+            </button>
+          </div>
+
+          <div class="col">
+            <button class="btn btn-light text-dark shadow"  href="http://bit.ly/jogo2d-madness-cust" target="_blank">
+              <img class="card-img-top" src="https://cdn.glitch.com/76911d19-02ad-47d6-8ebf-ef0f857b0c7f%2FMadness%20Customization%201.png?1551032343076" alt="Jogo 2D: Madness Customization"/>
+              <h5 class="card-title">Madness<br>
+              Customization</h5>
+              <p class="card-text">Jogo em Flash<br> (2013)</p>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
     
-    <br>  
-    Este site está em período de testes, caso tenha interesse em ver algumas partes dele, clique nos botões abaixo:<br><br>
-    
-    <a class="btn btn-primary" href="/curriculum.html" role="button">Currículo</a>
-    <br>
-    <br>
-    <a class="btn btn-warning" href="/jspong.html" role="button">JS Pong 2016</a>
-    <br>
-    <br>
-    <a class="btn btn-secondary" href="/madnessguns.html" role="button">Guns</a>
     
     <!-- Include Footer -->
     <div include-html="footer.html"></div>
@@ -78,7 +501,7 @@
     <script>
       includeHTML();
     </script>
-       
+    
     <!-- Bootstrap - JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

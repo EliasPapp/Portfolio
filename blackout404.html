@@ -19,7 +19,7 @@
     <!-- Bootstrap - CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
             
-    <title>Elias Papp - Currículo</title>
+    <title>Blackout 404</title>
     
     <!-- Include HTML files into this one (Header and Footer) -->
     <script type="text/javascript">
@@ -56,47 +56,39 @@
   </head>
   <body>
     
-    <!-- Bootstrap - JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
     <!-- Include Header -->
     <div include-html="header.html"></div>
     
-    <br>
-    
-    <!-- Form -->
-    <div class="container">
-
-      <form action="https://formspree.io/mnqgaokr" method="POST">
-        
-        <div class="form-group">
-
-          <b>Obs.: Todos os campos são obrigatórios.</b>
-          
-          <br><br>
-          <label for="InputName">Nome completo</label>
-          <input class="form-control" type="text" name="Nome" id="InputName" aria-describedby="nameHelp" placeholder="Seu nome" required>
-          <br>
-          <label for="InputEmail">E-mail</label>
-          <input type="email" class="form-control" name="E-mail" id="InputEmail" aria-describedby="emailHelp" placeholder="Seu e-mail de contato" required>
-          <br>
-          <label for="InputSubject">Assunto</label>
-          <input class="form-control" type="text" name="Assunto" id="InputSubject" aria-describedby="subjectHelp" placeholder="Qual o assunto?" required>
-          <br>
-          <label for="InputMessage">Mensagem</label>
-          <textarea class="form-control" type="text" name="Mensagem" id="InputMessage" rows="4" aria-describedby="messageHelp" placeholder="Escreva sua mensagem" required></textarea>
-
-          <br>
-          <button type="submit" class="btn btn-success" value="Send">Enviar</button>
-
-        </div>
-
-      </form>
-      
+    <!-- Content -->
+    <div class="container-fluid" style="padding: 0">
+      <img src="https://cdn.glitch.com/ec9aa80a-95f6-4fdb-a8e0-695ad9de6dd2%2Fe29a084e-5b83-4508-b29d-252cfb8be5cb.image.png?v=1589048232741" class="img-fluid" style="width: 100%;" alt="Banner"/>
     </div>
-
+    
+    <div class="container">
+      <!-- style="background-color: white;" -->
+      <div class="row">
+        <div class="col-12">
+          <h3 style="text-align: center; padding: 30px 0;">
+            Ilumine seu caminho para encontrar o artefato capaz de solucionar o grande <i>crash</i> da automação.
+          </h3>
+        </div>
+        <div class="col-6 align-self-center">
+          <p style="text-align: justify;">
+            Blackout 404 é um jogo de plataforma 2D que exige exploração de cenários escuros através da energia luminosa do personagem.
+          </p>
+        </div>
+        <div class="col-6">
+          <img src="https://cdn.glitch.com/ec9aa80a-95f6-4fdb-a8e0-695ad9de6dd2%2Ff5a06509-854b-4b22-8fbe-6e0ab8cfb310.image.png?v=1589051550458" width="100%" height="auto"/>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container" style="text-align: center; padding: 20px 0;">
+      O jogo se passa num futuro próximo em que cidades são totalmente automatizadas e controladas por uma máquina conhecida por Núcleo. Após um problema numa parte mais antiga que nunca falhou antes, feita pelo falecido criador do Núcleo que usou uma linguagem de programação não utilizada há anos por desenvolvedores, foi procurado alguém que entendesse
+da linguagem. Um engenheiro de robótica chamado Fábbio Pontes disse ter visto tal linguagem em um artefato de seus antigos projetos de uma empresa já falecida e que poderia resgatar tal
+objeto usando seu robô que possui energia e inteligência artificial própria, não dependendo assim do Núcleo: o CONV-1.
+    </div>
+    
     <!-- Include Footer -->
     <div include-html="footer.html"></div>
   
@@ -104,7 +96,6 @@
     <script>
       includeHTML();
     </script>
-    
+        
   </body>
-  
 </html>
