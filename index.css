@@ -62,8 +62,8 @@ p.card-title {
 div.card.bg-dark {
   width: 4rem;
   margin: 2px;
-  height: 6.2rem;
-  /* height: 5.2rem; */
+  height: 5.2rem;
+  /* height: 6.2rem; */
 }
 
 img.card-img-top.border {
